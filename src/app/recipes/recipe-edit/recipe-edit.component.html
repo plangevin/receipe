@@ -2,7 +2,7 @@
   <div class="col-xs-12">
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div class="row">
-        <div class="col col-xs-12">
+        <div class="col-xs-12">
           <button type="submit" [disabled]="!recipeForm.valid" class="btn btn-success">Save</button>
           <button type="button" (click)="onCancel()" class="btn btn-danger">Cancel</button>
         </div>
@@ -38,7 +38,7 @@
       </div>
       <div class="row">
         <div formArrayName="ingredients" class="col-xs-12">
-          <div *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index" [formGroupName]="i" style="margin-top: 10px;" class="row">
+          <div *ngFor="let ingredientCtrl of getControls(); let i = index" [formGroupName]="i" style="margin-top: 10px;" class="row">
             <div class="col-xs-8">
               <input type="text" formControlName="name" class="form-control">
             </div>
@@ -60,9 +60,3 @@
     </form>
   </div>
 </div>
-
-<p>
-  recipe-edit works!<br>
-  id = {{ id }}<br>
-  edit mode = {{ editMode }}
-</p>
