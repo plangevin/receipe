@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-    { path: 'recipes',       loadChildren: './recipes/recipes.module#RecipesModule' },
-    { path: 'shopping-list', loadChildren: './shopping-list/shopping-list.module#ShoppingListModule' },
+    { path: 'recipes',       loadChildren: './recipes/recipes.module#RecipesModule', canLoad:[AuthGuard] },
+    { path: 'shopping-list', loadChildren: './shopping-list/shopping-list.module#ShoppingListModule', canLoad:[AuthGuard] },
     { path: '', component: HomeComponent }
 ];
 
