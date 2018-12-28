@@ -22,8 +22,8 @@
       </button>
       <ul class="dropdown-menu">
         <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
-        <li [ngClass]="{'disabled': !authService.isAuthenticated()}"><a style="cursor: pointer;" routerLink="edit">Edit Recipe</a></li>
-        <li [ngClass]="{'disabled': !authService.isAuthenticated()}"><a style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+        <li [ngClass]="{'disabled': !isAuthenticated()}"><a style="cursor: pointer;" routerLink="edit">Edit Recipe</a></li>
+        <li [ngClass]="{'disabled': !isAuthenticated()}"><a style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Recipe</a></li>
       </ul>
     </div>
   </div>
