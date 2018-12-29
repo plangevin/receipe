@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
 import { Recipe } from './recipe.model';
@@ -28,7 +28,7 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private slService: ShoppingListService, private http: Http) {
+  constructor(private slService: ShoppingListService, private http: HttpClient) {
 
   }
 
