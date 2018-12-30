@@ -20,10 +20,15 @@ export class RecipeDetailComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit() {
+    this.route.data.subscribe(
+      (data: { recipe: Recipe }) => {
+        this.recipe = data.recipe;
+      }
+    );
+
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
-        this.recipe = this.recipeService.getRecipe(this.id);
       }
     );
   }

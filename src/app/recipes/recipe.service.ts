@@ -42,6 +42,10 @@ export class RecipeService {
   }
 
   getRecipe(index: number): Recipe {
+    if (index >= this.recipes.length) {
+      return null;
+    }
+
     return this.recipes[index];
   }
 
